@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-06-07 16:06+1000\n"
+"PO-Revision-Date: 2017-06-07 16:40+1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: bot.py:48
+msgid "kirov.reporting"
+msgstr ""
+"Кажется, что-то пошло не так, как задумывалось. Мы уже знаем об этом и скоро "
+"всё починим."
+
+# Тут команда /watch, а нужна /watch@botname
+#: bot_modules/help.py:6 bot_modules/start.py:17
+msgid "help.line_1"
+msgstr ""
+"Бот присылает уведомления об отключениях воды и света по выбранным адресам. "
+"Можно добавить несколько адресов.\n"
+"/watch@vloffbot — добавить адрес\n"
+"/unwatch@vloffbot — удалить адрес\n"
+"/status@vloffbot — текущее состояние в отслеживаемых домах\n"
+"/cancel@vloffbot — отменить текущую команду"
+
+#: bot_modules/status.py:15
+msgid "status.nothing_is_watched"
+msgstr ""
+"Чтобы перестать следить за адресом, нужно сначала добавить адрес, а у вас "
+"пока ни одного нет."
+
+#: bot_modules/status.py:31
+msgid "status.no_blackouts"
+msgstr "В отслеживаемых домах нет отключений. И это хорошо!"
+
+#: bot_modules/status.py:34
+msgid "status.current_blackouts"
+msgstr "Отключения в отслеживаемых домах:"
+
+#: bot_modules/status.py:36 tasks.py:68 tasks.py:81
+msgid "blackout.format"
+msgstr ""
+"{address}:\n"
+"⚠️ {blackout_type} (#off{blackout_id})\n"
+"📅 {blackout_date}\n"
+"🕓 {blackout_time}\n"
+"🗒 {blackout_desc}"
+
+#: bot_modules/unwatch.py:18 bot_modules/unwatch.py:35
+msgid "unwatch.cancel"
+msgstr "Отмена"
+
+#: bot_modules/unwatch.py:21
+msgid "unwatch.choose_wisely"
+msgstr "Какой адрес нужно забыть? Выбирайте тщательно."
+
+#: bot_modules/unwatch.py:26 bot_modules/unwatch.py:47
+msgid "unwatch.removed"
+msgstr "Забыли про этот адрес."
+
+#: bot_modules/unwatch.py:28
+msgid "unwatch.nothing_to_unwatch"
+msgstr ""
+"Чтобы перестать следить за адресом, нужно сначала добавить адрес, а у вас "
+"пока ни одного нет."
+
+#: bot_modules/unwatch.py:37 telegram.py:66
+msgid "main.cancelled"
+msgstr "Команда отменена."
+
+#: bot_modules/unwatch.py:49
+msgid "unwatch.not_found"
+msgstr ""
+"Нельзя развидеть то, что не увидели. Нельзя удалить адрес, который вы не "
+"добавили."
+
+#: bot_modules/unwatch.py:51
+msgid "unwatch.aaaargh"
+msgstr ""
+"АААЙ! Кажется, вы попытались удалить адрес, за которым вы не следите. Это "
+"больно, между прочим."
+
+#: bot_modules/watch.py:41
+msgid "watch.welcome"
+msgstr "Пришлите адрес текстом или местоположением."
+
+#: bot_modules/watch.py:55
+msgid "watch.not_expected"
+msgstr ""
+"Я не могу понимать ни картинки, ни видео, ни даже голос (а вот его я могу "
+"научиться понимать чуть позже). Только текст и местоположение."
+
+# Тут команда /watch, а нужна /watch@botname
+#: bot_modules/watch.py:59 bot_modules/watch.py:92
+msgid "watch.blocked_or_broken"
+msgstr ""
+"То ли адрес неправильный, то ли сеть упала, то ли vl.ru заблокировали доступ "
+"к данным. Попробуйте изменить формат адреса, достаточно просто названия "
+"улицы и номера дома: \"Алеутская 65\""
+
+#: bot_modules/watch.py:66
+msgid "watch.wrong_address"
+msgstr "Сервисы vl.ru не знают про такой адрес. Пришлите другой адрес."
+
+#: bot_modules/watch.py:75
+msgid "watch.choose_your_destiny"
+msgstr "Выберите нужный адрес из списка:"
+
+#: bot_modules/watch.py:84
+msgid "watch.wat"
+msgstr "Ну и как мне это понимать? Адреса обычно записываются текстом."
+
+#: bot_modules/watch.py:98
+msgid "watch.already_watching"
+msgstr "Я уже слежу за этим адресом."
+
+#: bot_modules/watch.py:114
+msgid "blackout.format_addressless"
+msgstr ""
+"⚠️ {blackout_type} (#off{blackout_id})\n"
+"📅 {blackout_date}\n"
+"🕓 {blackout_time}\n"
+"🗒 {blackout_desc}"
+
+#: bot_modules/watch.py:118
+msgid "watch.done_with_blackouts"
+msgstr ""
+"Хорошо, я буду следить за этим адресом. Сейчас по этому адресу "
+"зарегистрированы отключения:"
+
+#: bot_modules/watch.py:120
+msgid "watch.done"
+msgstr "Хорошо, я буду следить за этим адресом."
+
+#: tasks.py:68
+msgid "notify.something_big_changed"
+msgstr "Обновлено отключение по адресу %s"
+
+#: tasks.py:70
+msgid "notify.type_changed"
+msgstr ""
+"{address}: обновлен тип отключения #off{blackout_id} — теперь это "
+"{blackout_type}"
+
+#: tasks.py:72
+msgid "notify.date_changed"
+msgstr ""
+"{address}: обновлены даты отключения #off{blackout_id} ({blackout_type}) — "
+"{blackout_date}"
+
+#: tasks.py:74
+msgid "notify.time_changed"
+msgstr ""
+"{address}: обновлено время отключения #off{blackout_id} ({blackout_type}) — "
+"{blackout_time}"
+
+#: tasks.py:76
+msgid "notify.desc_changed"
+msgstr ""
+"{address}: обновлено описание отключения #off{blackout_id} — {blackout_desc}"
+
+#: tasks.py:81
+msgid "notify.start"
+msgstr "Новое отключение по адресу %s"
+
+#: tasks.py:86
+msgid "notify.done"
+msgstr ""
+"Отключение по адресу {address} (#off{blackout_id}, {blackout_type}) утратило "
+"актуальность"
+
+#: telegram.py:115
+msgid "main.unknown_command"
+msgstr "Неизвестная команда. /help@vloffbot"

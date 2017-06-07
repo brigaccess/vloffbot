@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-06-07 16:05++10\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: bot.py:48
+msgid "kirov.reporting"
+msgstr ""
+
+#: bot_modules/help.py:6 bot_modules/start.py:17
+msgid "help.line_1"
+msgstr ""
+
+#: bot_modules/status.py:15
+msgid "status.nothing_is_watched"
+msgstr ""
+
+#: bot_modules/status.py:31
+msgid "status.no_blackouts"
+msgstr ""
+
+#: bot_modules/status.py:34
+msgid "status.current_blackouts"
+msgstr ""
+
+#: bot_modules/status.py:36 tasks.py:68 tasks.py:81
+msgid "blackout.format"
+msgstr ""
+
+#: bot_modules/unwatch.py:18 bot_modules/unwatch.py:35
+msgid "unwatch.cancel"
+msgstr ""
+
+#: bot_modules/unwatch.py:21
+msgid "unwatch.choose_wisely"
+msgstr ""
+
+#: bot_modules/unwatch.py:26 bot_modules/unwatch.py:47
+msgid "unwatch.removed"
+msgstr ""
+
+#: bot_modules/unwatch.py:28
+msgid "unwatch.nothing_to_unwatch"
+msgstr ""
+
+#: bot_modules/unwatch.py:37 telegram.py:66
+msgid "main.cancelled"
+msgstr ""
+
+#: bot_modules/unwatch.py:49
+msgid "unwatch.not_found"
+msgstr ""
+
+#: bot_modules/unwatch.py:51
+msgid "unwatch.aaaargh"
+msgstr ""
+
+#: bot_modules/watch.py:41
+msgid "watch.welcome"
+msgstr ""
+
+#: bot_modules/watch.py:55
+msgid "watch.not_expected"
+msgstr ""
+
+#: bot_modules/watch.py:59 bot_modules/watch.py:92
+msgid "watch.blocked_or_broken"
+msgstr ""
+
+#: bot_modules/watch.py:66
+msgid "watch.wrong_address"
+msgstr ""
+
+#: bot_modules/watch.py:75
+msgid "watch.choose_your_destiny"
+msgstr ""
+
+#: bot_modules/watch.py:84
+msgid "watch.wat"
+msgstr ""
+
+#: bot_modules/watch.py:98
+msgid "watch.already_watching"
+msgstr ""
+
+#: bot_modules/watch.py:114
+msgid "blackout.format_addressless"
+msgstr ""
+
+#: bot_modules/watch.py:118
+msgid "watch.done_with_blackouts"
+msgstr ""
+
+#: bot_modules/watch.py:120
+msgid "watch.done"
+msgstr ""
+
+#: tasks.py:68
+msgid "notify.something_big_changed"
+msgstr ""
+
+#: tasks.py:70
+msgid "notify.type_changed"
+msgstr ""
+
+#: tasks.py:72
+msgid "notify.date_changed"
+msgstr ""
+
+#: tasks.py:74
+msgid "notify.time_changed"
+msgstr ""
+
+#: tasks.py:76
+msgid "notify.desc_changed"
+msgstr ""
+
+#: tasks.py:81
+msgid "notify.start"
+msgstr ""
+
+#: tasks.py:86
+msgid "notify.done"
+msgstr ""
+
+#: telegram.py:115
+msgid "main.unknown_command"
+msgstr ""
+
