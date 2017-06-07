@@ -1,0 +1,9 @@
+venv/
+*/__pycache__
+*.pyc
+.idea/
+initstart.sh
+init.sh
+celerybeat-schedule
+celerybeat.pid
+
