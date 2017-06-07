@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-07 16:05++10\n"
+"POT-Creation-Date: 2017-06-07 17:54++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,83 +27,84 @@ msgstr ""
 msgid "status.nothing_is_watched"
 msgstr ""
 
-#: bot_modules/status.py:31
+
+#: bot_modules/status.py:26
 msgid "status.no_blackouts"
 msgstr ""
 
-#: bot_modules/status.py:34
+#: bot_modules/status.py:29
 msgid "status.current_blackouts"
 msgstr ""
 
-#: bot_modules/status.py:36 tasks.py:68 tasks.py:81
+#: bot_modules/status.py:31 tasks.py:68 tasks.py:81
 msgid "blackout.format"
 msgstr ""
 
-#: bot_modules/unwatch.py:18 bot_modules/unwatch.py:35
+#: bot_modules/unwatch.py:19 bot_modules/unwatch.py:37
 msgid "unwatch.cancel"
 msgstr ""
 
-#: bot_modules/unwatch.py:21
+#: bot_modules/unwatch.py:22
 msgid "unwatch.choose_wisely"
 msgstr ""
 
-#: bot_modules/unwatch.py:26 bot_modules/unwatch.py:47
+#: bot_modules/unwatch.py:27 bot_modules/unwatch.py:49
 msgid "unwatch.removed"
 msgstr ""
 
-#: bot_modules/unwatch.py:28
+#: bot_modules/unwatch.py:29
 msgid "unwatch.nothing_to_unwatch"
 msgstr ""
 
-#: bot_modules/unwatch.py:37 telegram.py:66
+#: bot_modules/unwatch.py:39 telegram.py:68
 msgid "main.cancelled"
 msgstr ""
 
-#: bot_modules/unwatch.py:49
+#: bot_modules/unwatch.py:51
 msgid "unwatch.not_found"
 msgstr ""
 
-#: bot_modules/unwatch.py:51
+#: bot_modules/unwatch.py:53
 msgid "unwatch.aaaargh"
 msgstr ""
 
-#: bot_modules/watch.py:41
+#: bot_modules/watch.py:42
 msgid "watch.welcome"
 msgstr ""
 
-#: bot_modules/watch.py:55
+#: bot_modules/watch.py:57
 msgid "watch.not_expected"
 msgstr ""
 
-#: bot_modules/watch.py:59 bot_modules/watch.py:92
+#: bot_modules/watch.py:60 bot_modules/watch.py:94
 msgid "watch.blocked_or_broken"
 msgstr ""
 
-#: bot_modules/watch.py:66
+#: bot_modules/watch.py:67
 msgid "watch.wrong_address"
 msgstr ""
 
-#: bot_modules/watch.py:75
+#: bot_modules/watch.py:76
 msgid "watch.choose_your_destiny"
 msgstr ""
 
-#: bot_modules/watch.py:84
+#: bot_modules/watch.py:86
 msgid "watch.wat"
 msgstr ""
 
-#: bot_modules/watch.py:98
+#: bot_modules/watch.py:100
 msgid "watch.already_watching"
 msgstr ""
 
-#: bot_modules/watch.py:114
+#: bot_modules/watch.py:116
 msgid "blackout.format_addressless"
 msgstr ""
 
-#: bot_modules/watch.py:118
+#: bot_modules/watch.py:120
 msgid "watch.done_with_blackouts"
 msgstr ""
 
-#: bot_modules/watch.py:120
+#: bot_modules/watch.py:122
 msgid "watch.done"
 msgstr ""
 
@@ -135,7 +136,7 @@ msgstr ""
 msgid "notify.done"
 msgstr ""
 
-#: telegram.py:115
+#: telegram.py:117
 msgid "main.unknown_command"
 msgstr ""
 
