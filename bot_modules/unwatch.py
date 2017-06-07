@@ -36,7 +36,7 @@ def unwatch_listener(tg, msg, session=None):
     if 'text' in msg:
         if msg['text'] == _('unwatch.cancel'):
             tg.set_handler(chat_id, None)
-            tg.reply(chat_id, msg_id, _('main.cancelled'))
+            tg.reply(chat_id, msg_id, _('main.cancelled'), hide_keyboard=True)
             return
 
         w = session.query(Subscribition).join(Address, Subscribition.address).filter(

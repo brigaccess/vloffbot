@@ -73,7 +73,7 @@ def multiple_choice(tg, chat_id, msg_id, response):
         kb.append([extract_streetname(item), ])
 
     tg.set_handler(chat_id, destiny_handler)
-    tg.reply(chat_id, msg_id, _('watch.choose_your_destiny'), dialogue=True, reply_markup=json.dumps({'keyboard': kb}))
+    tg.reply(chat_id, msg_id, _('watch.choose_your_destiny'), dialogue=True, reply_markup={'keyboard': kb})
 
 
 def destiny_handler(tg, msg):
