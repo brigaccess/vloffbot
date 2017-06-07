@@ -15,11 +15,13 @@ class Telegram:
     api_logger = None
     keyboard_options = {
         'resize_keyboard': True,
-        'one_time_keyboard': True,
         'force_reply': True
     }
     hide_keyboard = {
         'hide_keyboard': True
+    }
+    force_reply = {
+        'force_reply': True
     }
 
     def __init__(self, key):
@@ -114,17 +116,27 @@ class Telegram:
         else:
             self.send_message(fake_msg['chat']['id'], _('main.unknown_command'))
 
-    def send_message(self, chat_id, text, hide_keyboard=True, **kwargs):
+    def send_message(self, chat_id, text, hide_keyboard=None, dialogue=False, **kwargs):
         argsdict = {'chat_id': chat_id, 'text': text, 'disable_notification': True}
         argsdict.update(kwargs)
+
         if 'reply_markup' in argsdict and type(argsdict['reply_markup']) != str:
+            if 'keyboard' in argsdict['reply_markup']:
+                argsdict['reply_markup'].update(self.keyboard_options)
             argsdict['reply_markup'] = json.dumps(argsdict['reply_markup'])
-        elif 'reply_markup' not in argsdict and hide_keyboard:
-            argsdict['reply_markup'] = json.dumps(self.hide_keyboard)
+
+        elif 'reply_markup' not in argsdict:
+            options = {}
+            if hide_keyboard:
+                options.update(self.hide_keyboard)
+            if dialogue:
+                options.update(self.force_reply)
+            argsdict['reply_markup'] = json.dumps(options)
+
         return self.api_call('sendMessage', argsdict)
 
     def reply(self, chat_id, msg_id, text, **kwargs):
-        return self.send_message(self, text, reply_to_message_id=msg_id)
+        return self.send_message(chat_id, text, reply_to_message_id=msg_id, **kwargs)
 
     def send_document(self, chat_id, name, document, mime, reply_markup=None, **kwargs):
         return self.api_call('sendDocument', {'chat_id': chat_id}, files={'document': (name, document, mime)}, **kwargs)

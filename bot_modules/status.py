@@ -10,9 +10,10 @@ def initialize(tg):
 @uses_db
 def status_command(tg, msg, session=None):
     chat_id = msg['chat']['id']
+    msg_id = msg['message_id']
     subs = session.query(Subscribition).filter(Subscribition.chat == chat_id).count()
     if subs == 0:
-        tg.send_message(chat_id, _('status.nothing_is_watched'))
+        tg.reply(chat_id, msg_id, _('status.nothing_is_watched'))
         return
 
     # current_status = session.query(Subscribition, Address, BlackoutAddress, Blackout).filter(
@@ -28,11 +29,11 @@ def status_command(tg, msg, session=None):
         .filter(Subscribition.chat == chat_id)
 
     if not current_status:
-        tg.send_message(chat_id, _('status.no_blackouts'))
+        tg.reply(chat_id, msg_id, _('status.no_blackouts'))
         return
 
     result_text = _('status.current_blackouts')
     for item in current_status:
         item_text = '\n\n' + _('blackout.format')
         result_text += format_blackout(item_text, item[0], item[1])
-    tg.send_message(chat_id, result_text)
+    tg.reply(chat_id, msg_id, result_text)

@@ -37,12 +37,14 @@ def initialize(tg):
 
 def watch_command(tg, msg):
     chat_id = msg['chat']['id']
+    msg_id = msg['message_id']
     tg.set_handler(chat_id, address_handler)
-    tg.send_message(chat_id, _('watch.welcome'))
+    tg.reply(chat_id, msg_id, _('watch.welcome'), dialogue=True)
 
 
 def address_handler(tg, msg):
     chat_id = msg['chat']['id']
+    msg_id = msg['message_id']
     response = None
 
     if 'location' in msg:
@@ -52,49 +54,50 @@ def address_handler(tg, msg):
         if hasnumbers.search(msg['text']):
             response = geocode_request(q=msg['text'])
     else:
-        tg.send_message(chat_id, _('watch.not_expected'))
+        tg.reply(chat_id, msg_id, _('watch.not_expected'), dialogue=True)
 
     if response is None:
-        tg.send_message(chat_id, _('watch.blocked_or_broken'))
+        tg.reply(chat_id, msg_id, _('watch.blocked_or_broken'), dialogue=True)
         return
     elif len(response) > 1:
-        multiple_choice(tg, chat_id, response)
+        multiple_choice(tg, chat_id, msg_id, response)
     elif len(response) == 1:
-        add_watch(tg, chat_id, extract_streetname(response[0]))
+        add_watch(tg, chat_id, msg_id, extract_streetname(response[0]))
     else:
-        tg.send_message(chat_id, _('watch.wrong_address'), hide_keyboard=False)
+        tg.reply(chat_id, msg_id, _('watch.wrong_address'), hide_keyboard=False, dialogue=True)
 
 
-def multiple_choice(tg, chat_id, response):
+def multiple_choice(tg, chat_id, msg_id, response):
     kb = []
     for item in response:
         kb.append([extract_streetname(item), ])
 
     tg.set_handler(chat_id, destiny_handler)
-    tg.send_message(chat_id, _('watch.choose_your_destiny'), reply_markup=json.dumps({'keyboard': kb}))
+    tg.reply(chat_id, msg_id, _('watch.choose_your_destiny'), dialogue=True, reply_markup=json.dumps({'keyboard': kb}))
 
 
 def destiny_handler(tg, msg):
     chat_id = msg['chat']['id']
+    msg_id = msg['message_id']
     tg.set_handler(chat_id, None)
     if 'text' in msg:
-        add_watch(tg, chat_id, msg['text'])
+        add_watch(tg, chat_id, msg_id, msg['text'])
     else:
-        tg.send_message(chat_id, _('watch.wat'), hide_keyboard=False)
+        tg.reply(chat_id, msg_id, _('watch.wat'), hide_keyboard=False, dialogue=True)
 
 
 @uses_db
-def add_watch(tg, chat_id, address, session=None):
+def add_watch(tg, chat_id, msg_id, address, session=None):
     cached_id = cached_address(address)
     if cached_id is None:
         tg.set_handler(chat_id, None)
-        tg.send_message(chat_id, _('watch.blocked_or_broken'))
+        tg.reply(chat_id, msg_id, _('watch.blocked_or_broken'), hide_keyboard=True)
         return
 
     if session.query(Subscribition).filter(Subscribition.chat == chat_id,
                                            Subscribition.address_id == cached_id).count() > 0:
         tg.set_handler(chat_id, None)
-        tg.send_message(chat_id, _('watch.already_watching'))
+        tg.reply(chat_id, msg_id, _('watch.already_watching'), hide_keyboard=True)
         return
 
     w = Subscribition(chat=chat_id, address_id=cached_address(address))
@@ -114,6 +117,6 @@ def add_watch(tg, chat_id, address, session=None):
 
     tg.set_handler(chat_id, None)
     if len(result_text) > 0:
-        tg.send_message(chat_id, _('watch.done_with_blackouts') + result_text)
+        tg.reply(chat_id, msg_id, _('watch.done_with_blackouts') + result_text, hide_keyboard=True)
     else:
-        tg.send_message(chat_id, _('watch.done'))
+        tg.reply(chat_id, msg_id, _('watch.done'), hide_keyboard=True)
