@@ -16,19 +16,13 @@ def status_command(tg, msg, session=None):
         tg.reply(chat_id, msg_id, _('status.nothing_is_watched'))
         return
 
-    # current_status = session.query(Subscribition, Address, BlackoutAddress, Blackout).filter(
-    #     Subscribition.chat == chat_id,
-    #     Subscribition.address_id == Address.id,
-    #     Address.url == BlackoutAddress.address_url,
-    #     BlackoutAddress.blackout_id == Blackout.id
-    # )
     current_status = session.query(Address, Blackout)\
         .join(Subscribition, Address.id == Subscribition.address_id)\
         .join(BlackoutAddress, Address.url == BlackoutAddress.address_url)\
         .join(Blackout, BlackoutAddress.blackout_id == Blackout.id)\
         .filter(Subscribition.chat == chat_id)
 
-    if not current_status:
+    if current_status.count() == 0:
         tg.reply(chat_id, msg_id, _('status.no_blackouts'))
         return
 
