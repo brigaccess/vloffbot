@@ -39,10 +39,14 @@ msgstr ""
 "Если что-то пошло не так и вы запутались, используйте /cancel@vloffbot чтобы "
 "отменить команду."
 
-#: bot_modules/status.py:16
+#: bot_modules/list.py:16 bot_modules/status.py:16
 msgid "status.nothing_is_watched"
 msgstr ""
 "В списке наблюдения нет домов. Добавьте дом с помощью команды /watch@vloffbot"
+
+#: bot_modules/list.py:18
+msgid "list.addresses_you_watch"
+msgstr "Ваш список наблюдения:"
 
 #: bot_modules/status.py:26
 msgid "status.no_blackouts"

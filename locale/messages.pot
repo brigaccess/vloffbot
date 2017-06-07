@@ -23,10 +23,13 @@ msgstr ""
 msgid "help.line_1"
 msgstr ""
 
-#: bot_modules/status.py:15
+#: bot_modules/list.py:16 bot_modules/status.py:16
 msgid "status.nothing_is_watched"
 msgstr ""
 
+#: bot_modules/list.py:18
+msgid "list.addresses_you_watch"
+msgstr ""
 
 #: bot_modules/status.py:26
 msgid "status.no_blackouts"

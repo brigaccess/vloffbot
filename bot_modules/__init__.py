@@ -3,5 +3,6 @@ __all__ = [
     "help",
     "watch",
     "unwatch",
-    "status"
+    "status",
+    "list"
 ]
