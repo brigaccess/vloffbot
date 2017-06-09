@@ -25,6 +25,17 @@ def geocode_request(q=None, lat=None, lon=None, zoom=15, radius=12):
         return None
 
 
+def city_filter(response):
+    if response is None:
+        return None
+
+    filtered = []
+    for item in response:
+        if item['attributes']['city']['name'] == 'Владивосток':
+            filtered.append(item)
+    return filtered
+
+
 def extract_streetname(item):
     return item['attributes']['street']['abbr'] + ' ' + \
            item['attributes']['street']['name'] + ', ' + \
@@ -55,6 +66,8 @@ def address_handler(tg, msg):
             response = geocode_request(q=msg['text'])
     else:
         tg.reply(chat_id, msg_id, _('watch.not_expected'), dialogue=True)
+
+    response = city_filter(response)
 
     if response is None:
         tg.reply(chat_id, msg_id, _('watch.blocked_or_broken'), dialogue=True)
