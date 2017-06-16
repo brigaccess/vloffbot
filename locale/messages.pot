@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-07 17:54++10\n"
+"POT-Creation-Date: 2017-06-16 15:31++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "status.current_blackouts"
 msgstr ""
 
-#: bot_modules/status.py:31 tasks.py:68 tasks.py:81
+#: bot_modules/status.py:31 tasks.py:68 tasks.py:71 tasks.py:84
 msgid "blackout.format"
 msgstr ""
 
@@ -71,71 +71,75 @@ msgstr ""
 msgid "unwatch.aaaargh"
 msgstr ""
 
-#: bot_modules/watch.py:42
+#: bot_modules/watch.py:53
 msgid "watch.welcome"
 msgstr ""
 
-#: bot_modules/watch.py:57
+#: bot_modules/watch.py:68
 msgid "watch.not_expected"
 msgstr ""
 
-#: bot_modules/watch.py:60 bot_modules/watch.py:94
+#: bot_modules/watch.py:73 bot_modules/watch.py:107
 msgid "watch.blocked_or_broken"
 msgstr ""
 
-#: bot_modules/watch.py:67
+#: bot_modules/watch.py:80
 msgid "watch.wrong_address"
 msgstr ""
 
-#: bot_modules/watch.py:76
+#: bot_modules/watch.py:89
 msgid "watch.choose_your_destiny"
 msgstr ""
 
-#: bot_modules/watch.py:86
+#: bot_modules/watch.py:99
 msgid "watch.wat"
 msgstr ""
 
-#: bot_modules/watch.py:100
+#: bot_modules/watch.py:113
 msgid "watch.already_watching"
 msgstr ""
 
-#: bot_modules/watch.py:116
+#: bot_modules/watch.py:129
 msgid "blackout.format_addressless"
 msgstr ""
 
-#: bot_modules/watch.py:120
+#: bot_modules/watch.py:133
 msgid "watch.done_with_blackouts"
 msgstr ""
 
-#: bot_modules/watch.py:122
+#: bot_modules/watch.py:135
 msgid "watch.done"
 msgstr ""
 
 #: tasks.py:68
+msgid "notify.actual_again"
+msgstr ""
+
+#: tasks.py:71
 msgid "notify.something_big_changed"
 msgstr ""
 
-#: tasks.py:70
+#: tasks.py:73
 msgid "notify.type_changed"
 msgstr ""
 
-#: tasks.py:72
+#: tasks.py:75
 msgid "notify.date_changed"
 msgstr ""
 
-#: tasks.py:74
+#: tasks.py:77
 msgid "notify.time_changed"
 msgstr ""
 
-#: tasks.py:76
+#: tasks.py:79
 msgid "notify.desc_changed"
 msgstr ""
 
-#: tasks.py:81
+#: tasks.py:84
 msgid "notify.start"
 msgstr ""
 
-#: tasks.py:86
+#: tasks.py:89
 msgid "notify.done"
 msgstr ""
 

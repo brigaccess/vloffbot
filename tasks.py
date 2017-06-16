@@ -64,6 +64,9 @@ def notify_address(address_url, blackout_id, text, session=None):
 def notify_change(address_url, blackout_id, changes=[]):
     if changes.count(True) == 0:
         return
+    elif changes[4]:  # Actual again
+        notify_address(address_url, blackout_id, _('notify.actual_again') % _('blackout.format'))
+        return
     elif changes.count(True) > 1:
         notify_address(address_url, blackout_id, _('notify.something_big_changed') % _('blackout.format'))
     elif changes[0]:  # type
@@ -188,7 +191,7 @@ def parse_summary(session=None, **kwargs):
         blackouts_ids.append(blackout_id)
 
         checksum = None
-        changes = [False, False, False, False]
+        changes = [False, False, False, False, False]
 
         known_blackout = session.query(Blackout).get(blackout_id)
         if known_blackout:  # Detect changes and store them
@@ -198,17 +201,21 @@ def parse_summary(session=None, **kwargs):
                 known_blackout.type_ = blackout_type
                 changes[0] = True
 
-            elif known_blackout.date_ != blackout_date:
+            if known_blackout.date_ != blackout_date:
                 known_blackout.date_ = blackout_date
                 changes[1] = True
 
-            elif known_blackout.time_ != blackout_time:
+            if known_blackout.time_ != blackout_time:
                 known_blackout.time_ = blackout_time
                 changes[2] = True
 
-            elif known_blackout.description != blackout_description:
+            if known_blackout.description != blackout_description:
                 known_blackout.description = blackout_description
                 changes[3] = True
+
+            if known_blackout.done == True:
+                known_blackout.done = False
+                changes[4] = True
 
             session.commit()
             session.flush()
