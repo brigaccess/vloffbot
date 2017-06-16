@@ -174,7 +174,7 @@ def parse_addresses(blackout_id, checksum=None, changes=None, session=None):
 @only_one(key="ParseSummary", timeout=60 * 5)
 @uses_db(session=db_session)
 def parse_summary(session=None, **kwargs):
-    summary_html = requests.get(vlroot + '/off/summary', proxies={'http': 'http://127.0.0.1:8080/'}).content
+    summary_html = requests.get(vlroot + '/off/summary').content
     summary_root = html.fromstring(summary_html)
     blackouts = summary_root.xpath('//*[@id="resume"]/div/ul/li[contains(@class, \'blackout-item\')]')
     blackouts_ids = []
@@ -237,4 +237,4 @@ def parse_summary(session=None, **kwargs):
 @celery.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(60.0 * 5.0, parse_summary, name='monitor vl.ru/off')
-    parse_summary.apply_async()
+    #parse_summary.apply_async()
