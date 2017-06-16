@@ -235,7 +235,6 @@ def parse_summary(session=None, **kwargs):
         addresses = session.query(BlackoutAddress).filter(BlackoutAddress.blackout_id == b.id)
         for a in addresses:
             notify_done.apply_async((a.address_url, b.id))
-        addresses.delete()
         finished_blackouts.append(b)
     session.bulk_update_mappings(Blackout, [{'id': b.id, 'done': True} for b in finished_blackouts])
     session.commit()
