@@ -20,7 +20,7 @@ def status_command(tg, msg, session=None):
         .join(Subscribition, Address.id == Subscribition.address_id)\
         .join(BlackoutAddress, Address.url == BlackoutAddress.address_url)\
         .join(Blackout, BlackoutAddress.blackout_id == Blackout.id)\
-        .filter(Subscribition.chat == chat_id)
+        .filter(Subscribition.chat == chat_id, Blackout.done == False)
 
     if current_status.count() == 0:
         tg.reply(chat_id, msg_id, _('status.no_blackouts'))

@@ -120,7 +120,7 @@ def add_watch(tg, chat_id, msg_id, address, session=None):
     current_blackouts = session.query(Address, Blackout) \
         .join(BlackoutAddress, Address.url == BlackoutAddress.address_url) \
         .join(Blackout, BlackoutAddress.blackout_id == Blackout.id) \
-        .filter(Address.id == cached_id)
+        .filter(Address.id == cached_id, Blackout.done == False)
 
     result_text = ''
 
