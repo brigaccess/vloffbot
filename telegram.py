@@ -117,7 +117,8 @@ class Telegram:
             self.send_message(fake_msg['chat']['id'], _('main.unknown_command'))
 
     def send_message(self, chat_id, text, hide_keyboard=None, dialogue=False, **kwargs):
-        argsdict = {'chat_id': chat_id, 'text': text, 'disable_notification': True}
+        argsdict = {'chat_id': chat_id, 'text': text, 'disable_notification': True, 'disable_web_page_preview': True,
+                    'parse_mode': 'Markdown'}
         argsdict.update(kwargs)
 
         if 'reply_markup' in argsdict and type(argsdict['reply_markup']) != str:
