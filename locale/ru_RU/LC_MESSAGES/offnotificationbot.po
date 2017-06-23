@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-06-16 15:35+1000\n"
-"PO-Revision-Date: 2017-06-16 15:40+1000\n"
+"POT-Creation-Date: 2017-06-24 07:47+1000\n"
+"PO-Revision-Date: 2017-06-24 08:38+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -58,14 +58,14 @@ msgstr "В домах, за которыми вы наблюдаете, нет �
 msgid "status.current_blackouts"
 msgstr "Отключения в домах из списка наблюдения:"
 
-#: bot_modules/status.py:31 tasks.py:68 tasks.py:71 tasks.py:84
+#: bot_modules/status.py:31
 msgid "blackout.format"
 msgstr ""
-"{address}:\n"
-"⚠️ {blackout_type} (#off{blackout_id})\n"
-"📅 {blackout_date}\n"
-"🕓 {blackout_time}\n"
-"🗒 {blackout_desc}"
+"{addresses}:\n"
+"[{type_emoji} {type_nominative_capitalized}]({url}) (#off{id})\n"
+"📅 {date}\n"
+"🕓 {time}\n"
+"🗒 {desc}"
 
 #: bot_modules/unwatch.py:19 bot_modules/unwatch.py:37
 msgid "unwatch.cancel"
@@ -133,13 +133,13 @@ msgstr ""
 msgid "watch.already_watching"
 msgstr "Этот адрес уже в вашем списке наблюдения."
 
-#: bot_modules/watch.py:129
+#: bot_modules/watch.py:129 tasks.py:122
 msgid "blackout.format_addressless"
 msgstr ""
-"⚠️ {blackout_type} (#off{blackout_id})\n"
-"📅 {blackout_date}\n"
-"🕓 {blackout_time}\n"
-"🗒 {blackout_desc}"
+"[{type_emoji} {type_nominative_capitalized}]({url}) (#off{id})\n"
+"📅 {date}\n"
+"🕓 {time}\n"
+"🗒 {desc}"
 
 #: bot_modules/watch.py:133
 msgid "watch.done_with_blackouts"
@@ -154,48 +154,165 @@ msgstr ""
 "Адрес добавлен в список наблюдения. Вы будете получать уведомления о новых "
 "отключениях по этому адресу."
 
-#: tasks.py:68
-msgid "notify.actual_again"
-msgstr "Возобновлено отключение по адресу %s"
+#: tasks.py:88
+msgid "notify.details"
+msgstr ""
+"{type_emoji} {type_capitalized} по адресу {addresses} не будет {date} "
+"{time}\n"
+"\n"
+"([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:71
-msgid "notify.something_big_changed"
-msgstr "Обновлено отключение по адресу %s"
+#: tasks.py:91
+msgid "notify.details_multiple"
+msgstr ""
+"{type_emoji} {type_capitalized} не будет {date} {time} по адресам:\n"
+"\n"
+"{addresses}\n"
+"([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:73
+#: tasks.py:112
+msgid "notify.details_again"
+msgstr ""
+"{type_emoji} {type_capitalized} по адресу {addresses} снова не будет {date} "
+"{time}\n"
+"\n"
+"([отключение №{id}]({url}), {desc}) #off{id}"
+
+#: tasks.py:114
+msgid "notify.details_again_multiple"
+msgstr ""
+"{type_emoji} {type_capitalized} снова не будет {date} {time} по адресам:\n"
+"\n"
+"{addresses}\n"
+"([отключение №{id}]({url}), {desc}) #off{id}"
+
+#: tasks.py:118
+msgid "notify.details_changed"
+msgstr "Изменены детали [отключения №{id}]({url}) по адресу {addresses}: "
+
+#: tasks.py:120
+msgid "notify.details_changed_multiple"
+msgstr ""
+"Изменены детали [отключения №{id}]({url}) по адресам: \n"
+"\n"
+"{addresses}"
+
+#: tasks.py:126
 msgid "notify.type_changed"
 msgstr ""
-"{address}: обновлен тип отключения #off{blackout_id} — теперь это "
-"{blackout_type}"
+"Изменен тип [отключения №{id}]({url}): по адресу {addresses} не будет {type} "
+"#off{id}"
 
-#: tasks.py:75
-msgid "notify.date_changed"
+#: tasks.py:128
+msgid "notify.type_changed_multiple"
 msgstr ""
-"{address}: обновлены даты отключения #off{blackout_id} ({blackout_type}) — "
-"{blackout_date}"
+"Изменен тип [отключения №{id}]({url}): теперь не будет {type} по адресам\n"
+"\n"
+"{addresses}\n"
+"#off{id}"
 
-#: tasks.py:77
+#: tasks.py:131
 msgid "notify.time_changed"
 msgstr ""
-"{address}: обновлено время отключения #off{blackout_id} ({blackout_type}) — "
-"{blackout_time}"
+"Изменены сроки [отключения {type} №{id}]({url}) по адресу {addresses}: "
+"{date} {time} #off{id}"
 
-#: tasks.py:79
+#: tasks.py:133
+msgid "notify.time_changed_multiple"
+msgstr ""
+"Изменены сроки [отключения {type} №{id}]({url}): {type} не будет {date} "
+"{time} по адресам \n"
+"\n"
+"{addresses}\n"
+"#off{id}"
+
+#: tasks.py:136
 msgid "notify.desc_changed"
 msgstr ""
-"{address}: обновлено описание отключения #off{blackout_id} — {blackout_desc}"
+"Изменено описание [отключения {type} №{id}]({url}) по адресу {addresses}: "
+"{desc} #off{id}"
 
-#: tasks.py:84
-msgid "notify.start"
-msgstr "Новое отключение по адресу %s"
+#: tasks.py:138
+msgid "notify.desc_changed_multiple"
+msgstr ""
+"Изменено описание [отключения {type} №{id}]({url}): {desc}. Отключение "
+"затрагивает дома по адресам\n"
+"\n"
+"{addresses}\n"
+"#off{id}"
 
-#: tasks.py:89
+#: tasks.py:152
 msgid "notify.done"
 msgstr ""
-"Отключение по адресу {address} (#off{blackout_id}, {blackout_type}) утратило "
-"актуальность"
+"{type_emoji} {type_capitalized} дали по адресу {addresses} ([отключение "
+"№{id}]({url})) #off{id}"
+
+#: tasks.py:154
+msgid "notify.done_multiple"
+msgstr ""
+"{type_emoji} {type_capitalized} дали по адресам\n"
+"\n"
+"{addresses} \n"
+"#off{id}"
 
 #: telegram.py:117
 msgid "main.unknown_command"
 msgstr ""
 "Неизвестная команда. Воспользуйтесь справкой с помощью команды /help@vloffbot"
+
+#~ msgid "notify.format_addressless"
+#~ msgstr ""
+#~ "⚠️ {blackout_type} (#off{blackout_id})\n"
+#~ "📅 {blackout_date}\n"
+#~ "🕓 {blackout_time}\n"
+#~ "🗒 {blackout_desc}"
+
+#~ msgid "notify.date_changed"
+#~ msgstr ""
+#~ "{address}: обновлены даты отключения #off{blackout_id} ({blackout_type}) "
+#~ "— {blackout_date}"
+
+#, fuzzy
+#~| msgid "notify.date_changed"
+#~ msgid "notify.date_changed_multiple"
+#~ msgstr ""
+#~ "{address}: обновлены даты отключения #off{blackout_id} ({blackout_type}) "
+#~ "— {blackout_date}"
+
+#~ msgid "notify.added"
+#~ msgstr ""
+#~ "{type_emoji} {type_capitalized} по адресу {addresses} не будет {date} "
+#~ "{time}\n"
+#~ "\n"
+#~ "([отключение №{id}]({url}), {desc}) #off{id}"
+
+#~ msgid "notify.something_big_changed"
+#~ msgstr "Обновлено отключение по адресу %s"
+
+#~ msgid "action.added"
+#~ msgstr "Добавлено"
+
+#~ msgid "notify.intro_single"
+#~ msgstr "{intro} по адресу {{addresses}}"
+
+#~ msgid "notify.intro_multiple"
+#~ msgstr "{intro}"
+
+#~ msgid "notify.outro_multiple"
+#~ msgstr ""
+#~ "Отключение затрагива{affected_ending} дома:\n"
+#~ "{addresses}"
+
+#~ msgid "notify.intro"
+#~ msgstr ""
+#~ "{action} [отключени{blackout_еnding} {blackout_type}]({blackout_url}) "
+#~ "(#off{blackout_id})"
+
+#~ msgid "notify.blackout_details"
+#~ msgstr ""
+#~ "📅 {blackout_date}\n"
+#~ "🕓 {blackout_time}\n"
+#~ "🗒 {blackout_desc}"
+
+#~ msgid "notify.start"
+#~ msgstr "Новое отключение по адресу %s"

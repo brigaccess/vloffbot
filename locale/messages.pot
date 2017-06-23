@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-16 15:31++10\n"
+"POT-Creation-Date: 2017-06-24 07:52++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "status.current_blackouts"
 msgstr ""
 
-#: bot_modules/status.py:31 tasks.py:68 tasks.py:71 tasks.py:84
+#: bot_modules/status.py:31
 msgid "blackout.format"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "watch.already_watching"
 msgstr ""
 
-#: bot_modules/watch.py:129
+#: bot_modules/watch.py:129 tasks.py:122
 msgid "blackout.format_addressless"
 msgstr ""
 
@@ -111,36 +111,60 @@ msgstr ""
 msgid "watch.done"
 msgstr ""
 
-#: tasks.py:68
-msgid "notify.actual_again"
+#: tasks.py:88
+msgid "notify.details"
 msgstr ""
 
-#: tasks.py:71
-msgid "notify.something_big_changed"
+#: tasks.py:91
+msgid "notify.details_multiple"
 msgstr ""
 
-#: tasks.py:73
+#: tasks.py:112
+msgid "notify.details_again"
+msgstr ""
+
+#: tasks.py:114
+msgid "notify.details_again_multiple"
+msgstr ""
+
+#: tasks.py:118
+msgid "notify.details_changed"
+msgstr ""
+
+#: tasks.py:120
+msgid "notify.details_changed_multiple"
+msgstr ""
+
+#: tasks.py:126
 msgid "notify.type_changed"
 msgstr ""
 
-#: tasks.py:75
-msgid "notify.date_changed"
+#: tasks.py:128
+msgid "notify.type_changed_multiple"
 msgstr ""
 
-#: tasks.py:77
+#: tasks.py:131
 msgid "notify.time_changed"
 msgstr ""
 
-#: tasks.py:79
+#: tasks.py:133
+msgid "notify.time_changed_multiple"
+msgstr ""
+
+#: tasks.py:136
 msgid "notify.desc_changed"
 msgstr ""
 
-#: tasks.py:84
-msgid "notify.start"
+#: tasks.py:138
+msgid "notify.desc_changed_multiple"
 msgstr ""
 
-#: tasks.py:89
+#: tasks.py:152
 msgid "notify.done"
+msgstr ""
+
+#: tasks.py:154
+msgid "notify.done_multiple"
 msgstr ""
 
 #: telegram.py:117
