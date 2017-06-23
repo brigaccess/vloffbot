@@ -29,5 +29,5 @@ def status_command(tg, msg, session=None):
     result_text = _('status.current_blackouts')
     for item in current_status:
         item_text = '\n\n' + _('blackout.format')
-        result_text += format_blackout(item_text, item[0], item[1])
+        result_text += format_blackout(item_text, [(item[0].address, item[0].url)], item[1])
     tg.reply(chat_id, msg_id, result_text)

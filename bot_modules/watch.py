@@ -126,7 +126,7 @@ def add_watch(tg, chat_id, msg_id, address, session=None):
 
     for item in current_blackouts:
         result_text += '\n'
-        result_text += format_blackout(_('blackout.format_addressless'), item[0], item[1])
+        result_text += format_blackout(_('blackout.format_addressless'), [(item[0].address, item[0].url)], item[1])
 
     tg.set_handler(chat_id, None)
     if len(result_text) > 0:
