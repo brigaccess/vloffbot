@@ -11,6 +11,7 @@ class Chat(Base):
     id = Column(BigInteger, primary_key=True)
     added_on = Column(DateTime, default=datetime.utcnow)
     active = Column(Boolean, default=True)
+    admin = Column(Boolean, default=False)
 
 
 class Subscribition(Base):
