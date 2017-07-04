@@ -3,6 +3,7 @@ __all__ = [
     "help",
     "watch",
     "unwatch",
+    "stats",
     "status",
     "list"
 ]

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-24 07:52++10\n"
+"POT-Creation-Date: 2017-07-05 01:33++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,12 +23,20 @@ msgstr ""
 msgid "help.line_1"
 msgstr ""
 
-#: bot_modules/list.py:16 bot_modules/status.py:16
+#: bot_modules/list.py:18 bot_modules/status.py:16
 msgid "status.nothing_is_watched"
 msgstr ""
 
-#: bot_modules/list.py:18
+#: bot_modules/list.py:20
 msgid "list.addresses_you_watch"
+msgstr ""
+
+#: bot_modules/stats.py:17
+msgid "stats.details"
+msgstr ""
+
+#: bot_modules/stats.py:46 telegram.py:117
+msgid "main.unknown_command"
 msgstr ""
 
 #: bot_modules/status.py:26
@@ -99,7 +107,7 @@ msgstr ""
 msgid "watch.already_watching"
 msgstr ""
 
-#: bot_modules/watch.py:129 tasks.py:122
+#: bot_modules/watch.py:129 tasks.py:106
 msgid "blackout.format_addressless"
 msgstr ""
 
@@ -111,63 +119,59 @@ msgstr ""
 msgid "watch.done"
 msgstr ""
 
-#: tasks.py:88
+#: tasks.py:72
 msgid "notify.details"
 msgstr ""
 
-#: tasks.py:91
+#: tasks.py:75
 msgid "notify.details_multiple"
 msgstr ""
 
-#: tasks.py:112
+#: tasks.py:96
 msgid "notify.details_again"
 msgstr ""
 
-#: tasks.py:114
+#: tasks.py:98
 msgid "notify.details_again_multiple"
 msgstr ""
 
-#: tasks.py:118
+#: tasks.py:102
 msgid "notify.details_changed"
 msgstr ""
 
-#: tasks.py:120
+#: tasks.py:104
 msgid "notify.details_changed_multiple"
 msgstr ""
 
-#: tasks.py:126
+#: tasks.py:110
 msgid "notify.type_changed"
 msgstr ""
 
-#: tasks.py:128
+#: tasks.py:112
 msgid "notify.type_changed_multiple"
 msgstr ""
 
-#: tasks.py:131
+#: tasks.py:115
 msgid "notify.time_changed"
 msgstr ""
 
-#: tasks.py:133
+#: tasks.py:117
 msgid "notify.time_changed_multiple"
 msgstr ""
 
-#: tasks.py:136
+#: tasks.py:120
 msgid "notify.desc_changed"
 msgstr ""
 
-#: tasks.py:138
+#: tasks.py:122
 msgid "notify.desc_changed_multiple"
 msgstr ""
 
-#: tasks.py:152
+#: tasks.py:136
 msgid "notify.done"
 msgstr ""
 
-#: tasks.py:154
+#: tasks.py:138
 msgid "notify.done_multiple"
-msgstr ""
-
-#: telegram.py:117
-msgid "main.unknown_command"
 msgstr ""
 

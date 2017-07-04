@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-06-24 07:47+1000\n"
-"PO-Revision-Date: 2017-06-24 08:38+1000\n"
+"POT-Creation-Date: 2017-07-05 01:34+1000\n"
+"PO-Revision-Date: 2017-07-05 01:38+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -41,14 +41,34 @@ msgstr ""
 "Если что-то пошло не так и вы запутались, используйте /cancel@vloffbot чтобы "
 "отменить команду."
 
-#: bot_modules/list.py:16 bot_modules/status.py:16
+#: bot_modules/list.py:18 bot_modules/status.py:16
 msgid "status.nothing_is_watched"
 msgstr ""
 "В списке наблюдения нет домов. Добавьте дом с помощью команды /watch@vloffbot"
 
-#: bot_modules/list.py:18
+#: bot_modules/list.py:20
 msgid "list.addresses_you_watch"
 msgstr "Ваш список наблюдения:"
+
+#: bot_modules/stats.py:17
+msgid "stats.details"
+msgstr ""
+"```\n"
+"Новые пользователи (чаты) / Новые подписки (в чатах) / Пользователи (чаты) "
+"без подписки\n"
+"За 24 часа: {daily[0]:>4} ({daily[1]:>4}) / {daily[2]:>4} ({daily[3]:>4}) / "
+"{daily[4]:>4} ({daily[5]:>4})\n"
+"За неделю:  {weekly[0]:>4} ({weekly[1]:>4}) / {weekly[2]:>4} ({weekly[3]:"
+">4}) / {weekly[4]:>4} ({weekly[5]:>4})\n"
+"За месяц:   {monthly[0]:>4} ({monthly[1]:>4}) / {monthly[2]:>4} ({monthly[3]:"
+">4}) / {monthly[4]:>4} ({monthly[5]:>4})\n"
+"Всего:      {total[0]:>4} ({total[1]:>4}) / {total[2]:>4} ({total[3]:>4}) / "
+"{total[4]:>4} ({total[5]:>4})```"
+
+#: bot_modules/stats.py:46 telegram.py:117
+msgid "main.unknown_command"
+msgstr ""
+"Неизвестная команда. Воспользуйтесь справкой с помощью команды /help@vloffbot"
 
 #: bot_modules/status.py:26
 msgid "status.no_blackouts"
@@ -133,7 +153,7 @@ msgstr ""
 msgid "watch.already_watching"
 msgstr "Этот адрес уже в вашем списке наблюдения."
 
-#: bot_modules/watch.py:129 tasks.py:122
+#: bot_modules/watch.py:129 tasks.py:106
 msgid "blackout.format_addressless"
 msgstr ""
 "[{type_emoji} {type_nominative_capitalized}]({url}) (#off{id})\n"
@@ -154,7 +174,7 @@ msgstr ""
 "Адрес добавлен в список наблюдения. Вы будете получать уведомления о новых "
 "отключениях по этому адресу."
 
-#: tasks.py:88
+#: tasks.py:72
 msgid "notify.details"
 msgstr ""
 "{type_emoji} {type_capitalized} по адресу {addresses} не будет {date} "
@@ -162,7 +182,7 @@ msgstr ""
 "\n"
 "([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:91
+#: tasks.py:75
 msgid "notify.details_multiple"
 msgstr ""
 "{type_emoji} {type_capitalized} не будет {date} {time} по адресам:\n"
@@ -170,7 +190,7 @@ msgstr ""
 "{addresses}\n"
 "([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:112
+#: tasks.py:96
 msgid "notify.details_again"
 msgstr ""
 "{type_emoji} {type_capitalized} по адресу {addresses} снова не будет {date} "
@@ -178,7 +198,7 @@ msgstr ""
 "\n"
 "([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:114
+#: tasks.py:98
 msgid "notify.details_again_multiple"
 msgstr ""
 "{type_emoji} {type_capitalized} снова не будет {date} {time} по адресам:\n"
@@ -186,24 +206,24 @@ msgstr ""
 "{addresses}\n"
 "([отключение №{id}]({url}), {desc}) #off{id}"
 
-#: tasks.py:118
+#: tasks.py:102
 msgid "notify.details_changed"
 msgstr "Изменены детали [отключения №{id}]({url}) по адресу {addresses}: "
 
-#: tasks.py:120
+#: tasks.py:104
 msgid "notify.details_changed_multiple"
 msgstr ""
 "Изменены детали [отключения №{id}]({url}) по адресам: \n"
 "\n"
 "{addresses}"
 
-#: tasks.py:126
+#: tasks.py:110
 msgid "notify.type_changed"
 msgstr ""
 "Изменен тип [отключения №{id}]({url}): по адресу {addresses} не будет {type} "
 "#off{id}"
 
-#: tasks.py:128
+#: tasks.py:112
 msgid "notify.type_changed_multiple"
 msgstr ""
 "Изменен тип [отключения №{id}]({url}): теперь не будет {type} по адресам\n"
@@ -211,13 +231,13 @@ msgstr ""
 "{addresses}\n"
 "#off{id}"
 
-#: tasks.py:131
+#: tasks.py:115
 msgid "notify.time_changed"
 msgstr ""
 "Изменены сроки [отключения {type} №{id}]({url}) по адресу {addresses}: "
 "{date} {time} #off{id}"
 
-#: tasks.py:133
+#: tasks.py:117
 msgid "notify.time_changed_multiple"
 msgstr ""
 "Изменены сроки [отключения {type} №{id}]({url}): {type} не будет {date} "
@@ -226,13 +246,13 @@ msgstr ""
 "{addresses}\n"
 "#off{id}"
 
-#: tasks.py:136
+#: tasks.py:120
 msgid "notify.desc_changed"
 msgstr ""
 "Изменено описание [отключения {type} №{id}]({url}) по адресу {addresses}: "
 "{desc} #off{id}"
 
-#: tasks.py:138
+#: tasks.py:122
 msgid "notify.desc_changed_multiple"
 msgstr ""
 "Изменено описание [отключения {type} №{id}]({url}): {desc}. Отключение "
@@ -241,24 +261,19 @@ msgstr ""
 "{addresses}\n"
 "#off{id}"
 
-#: tasks.py:152
+#: tasks.py:136
 msgid "notify.done"
 msgstr ""
 "{type_emoji} {type_capitalized} дали по адресу {addresses} ([отключение "
 "№{id}]({url})) #off{id}"
 
-#: tasks.py:154
+#: tasks.py:138
 msgid "notify.done_multiple"
 msgstr ""
 "{type_emoji} {type_capitalized} дали по адресам\n"
 "\n"
 "{addresses} \n"
 "#off{id}"
-
-#: telegram.py:117
-msgid "main.unknown_command"
-msgstr ""
-"Неизвестная команда. Воспользуйтесь справкой с помощью команды /help@vloffbot"
 
 #~ msgid "notify.format_addressless"
 #~ msgstr ""
