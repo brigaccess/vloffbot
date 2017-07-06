@@ -107,7 +107,7 @@ class Telegram:
         fake_msg = msg
 
         if command is None:
-            command = msg['text'].split('@', 1)[0]
+            command = msg['text'].split('@', 1)[0].split(' ', 1)[0]
         else:
             fake_msg['text'] = command
 
