@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-07-05 01:33++10\n"
+"POT-Creation-Date: 2017-07-06 17:51++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "kirov.reporting"
 msgstr ""
 
-#: bot_modules/help.py:6 bot_modules/start.py:17
+#: bot_modules/help.py:6 bot_modules/start.py:25 bot_modules/start.py:49
 msgid "help.line_1"
 msgstr ""
 
@@ -31,11 +31,23 @@ msgstr ""
 msgid "list.addresses_you_watch"
 msgstr ""
 
-#: bot_modules/stats.py:17
+#: bot_modules/start.py:38 bot_modules/watch.py:82
+msgid "watch.already_watching"
+msgstr ""
+
+#: bot_modules/start.py:40
+msgid "start.done"
+msgstr ""
+
+#: bot_modules/start.py:42
+msgid "start.done_with_blackouts"
+msgstr ""
+
+#: bot_modules/stats.py:15
 msgid "stats.details"
 msgstr ""
 
-#: bot_modules/stats.py:46 telegram.py:117
+#: bot_modules/stats.py:43 telegram.py:117
 msgid "main.unknown_command"
 msgstr ""
 
@@ -79,44 +91,36 @@ msgstr ""
 msgid "unwatch.aaaargh"
 msgstr ""
 
-#: bot_modules/watch.py:53
+#: bot_modules/watch.py:22
 msgid "watch.welcome"
 msgstr ""
 
-#: bot_modules/watch.py:68
+#: bot_modules/watch.py:37
 msgid "watch.not_expected"
 msgstr ""
 
-#: bot_modules/watch.py:73 bot_modules/watch.py:107
+#: bot_modules/watch.py:42 bot_modules/watch.py:75
 msgid "watch.blocked_or_broken"
 msgstr ""
 
-#: bot_modules/watch.py:80
+#: bot_modules/watch.py:49
 msgid "watch.wrong_address"
 msgstr ""
 
-#: bot_modules/watch.py:89
+#: bot_modules/watch.py:58
 msgid "watch.choose_your_destiny"
 msgstr ""
 
-#: bot_modules/watch.py:99
+#: bot_modules/watch.py:68
 msgid "watch.wat"
 msgstr ""
 
-#: bot_modules/watch.py:113
-msgid "watch.already_watching"
-msgstr ""
-
-#: bot_modules/watch.py:129 tasks.py:106
-msgid "blackout.format_addressless"
-msgstr ""
-
-#: bot_modules/watch.py:133
-msgid "watch.done_with_blackouts"
-msgstr ""
-
-#: bot_modules/watch.py:135
+#: bot_modules/watch.py:84
 msgid "watch.done"
+msgstr ""
+
+#: bot_modules/watch.py:86
+msgid "watch.done_with_blackouts"
 msgstr ""
 
 #: tasks.py:72
@@ -141,6 +145,10 @@ msgstr ""
 
 #: tasks.py:104
 msgid "notify.details_changed_multiple"
+msgstr ""
+
+#: tasks.py:106 utils.py:91
+msgid "blackout.format_addressless"
 msgstr ""
 
 #: tasks.py:110

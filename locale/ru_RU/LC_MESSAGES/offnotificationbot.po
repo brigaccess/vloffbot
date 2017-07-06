@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-07-05 01:34+1000\n"
-"PO-Revision-Date: 2017-07-05 01:38+1000\n"
+"POT-Creation-Date: 2017-07-06 17:52+1000\n"
+"PO-Revision-Date: 2017-07-06 17:52+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -25,7 +25,7 @@ msgstr ""
 "всё починим."
 
 # Тут команда /watch, а нужна /watch@botname
-#: bot_modules/help.py:6 bot_modules/start.py:17
+#: bot_modules/help.py:6 bot_modules/start.py:25 bot_modules/start.py:49
 msgid "help.line_1"
 msgstr ""
 "Бот присылает уведомления об отключениях коммунальных услуг по выбранным "
@@ -50,7 +50,27 @@ msgstr ""
 msgid "list.addresses_you_watch"
 msgstr "Ваш список наблюдения:"
 
-#: bot_modules/stats.py:17
+#: bot_modules/start.py:38 bot_modules/watch.py:82
+msgid "watch.already_watching"
+msgstr "Этот адрес уже в вашем списке наблюдения."
+
+#: bot_modules/start.py:40
+msgid "start.done"
+msgstr ""
+"Здравствуйте. Бот будет следить за отключениями по адресу {addresses}. Если "
+"вы хотите добавить больше адресов и узнать обо всех возможностях бота, "
+"воспользуйтесь командой /help@vloffbot."
+
+#: bot_modules/start.py:42
+msgid "start.done_with_blackouts"
+msgstr ""
+"Здравствуйте. Бот будет следить за отключениями по адресу {addresses}. Если "
+"вы хотите добавить больше адресов и узнать обо всех возможностях бота, "
+"воспользуйтесь командой /help@vloffbot.\n"
+"\n"
+"Сейчас по этому адресу зарегистрированы отключения:"
+
+#: bot_modules/stats.py:15
 msgid "stats.details"
 msgstr ""
 "```\n"
@@ -65,7 +85,7 @@ msgstr ""
 "Всего:      {total[0]:>4} ({total[1]:>4}) / {total[2]:>4} ({total[3]:>4}) / "
 "{total[4]:>4} ({total[5]:>4})```"
 
-#: bot_modules/stats.py:46 telegram.py:117
+#: bot_modules/stats.py:43 telegram.py:117
 msgid "main.unknown_command"
 msgstr ""
 "Неизвестная команда. Воспользуйтесь справкой с помощью команды /help@vloffbot"
@@ -119,60 +139,48 @@ msgstr ""
 msgid "unwatch.aaaargh"
 msgstr "Выберите адрес из списка."
 
-#: bot_modules/watch.py:53
+#: bot_modules/watch.py:22
 msgid "watch.welcome"
 msgstr ""
 "Пришлите адрес, за которым вы хотите наблюдать. Вы можете отправить его "
 "текстом (например, Алеутская 65) или местоположением."
 
-#: bot_modules/watch.py:68
+#: bot_modules/watch.py:37
 msgid "watch.not_expected"
 msgstr "Не понимаю, о чем вы. Пришлите адрес текстом или местоположением."
 
 # Тут команда /watch, а нужна /watch@botname
-#: bot_modules/watch.py:73 bot_modules/watch.py:107
+#: bot_modules/watch.py:42 bot_modules/watch.py:75
 msgid "watch.blocked_or_broken"
 msgstr "Неправильный адрес. Попробуйте снова."
 
-#: bot_modules/watch.py:80
+#: bot_modules/watch.py:49
 msgid "watch.wrong_address"
 msgstr ""
 "Не могу найти этот адрес. Пожалуйста, пришлите корректный адрес текстом "
 "(например, Алеутская 65) или местоположением."
 
-#: bot_modules/watch.py:89
+#: bot_modules/watch.py:58
 msgid "watch.choose_your_destiny"
 msgstr "Выберите дом, за которым хотите следить:"
 
-#: bot_modules/watch.py:99
+#: bot_modules/watch.py:68
 msgid "watch.wat"
 msgstr ""
 "Я не могу понять, о чем вы. Отправьте адрес, за которым вы хотите наблюдать."
 
-#: bot_modules/watch.py:113
-msgid "watch.already_watching"
-msgstr "Этот адрес уже в вашем списке наблюдения."
-
-#: bot_modules/watch.py:129 tasks.py:106
-msgid "blackout.format_addressless"
+#: bot_modules/watch.py:84
+msgid "watch.done"
 msgstr ""
-"[{type_emoji} {type_nominative_capitalized}]({url}) (#off{id})\n"
-"📅 {date}\n"
-"🕓 {time}\n"
-"🗒 {desc}"
+"Адрес добавлен в список наблюдения. Вы будете получать уведомления о новых "
+"отключениях по этому адресу."
 
-#: bot_modules/watch.py:133
+#: bot_modules/watch.py:86
 msgid "watch.done_with_blackouts"
 msgstr ""
 "Адрес добавлен в список наблюдения. Вы будете получать уведомления о новых "
 "отключениях по этому адресу. Сейчас по этому адресу зарегистрированы "
 "отключения:"
-
-#: bot_modules/watch.py:135
-msgid "watch.done"
-msgstr ""
-"Адрес добавлен в список наблюдения. Вы будете получать уведомления о новых "
-"отключениях по этому адресу."
 
 #: tasks.py:72
 msgid "notify.details"
@@ -216,6 +224,14 @@ msgstr ""
 "Изменены детали [отключения №{id}]({url}) по адресам: \n"
 "\n"
 "{addresses}"
+
+#: tasks.py:106 utils.py:91
+msgid "blackout.format_addressless"
+msgstr ""
+"[{type_emoji} {type_nominative_capitalized}]({url}) (#off{id})\n"
+"📅 {date}\n"
+"🕓 {time}\n"
+"🗒 {desc}"
 
 #: tasks.py:110
 msgid "notify.type_changed"
