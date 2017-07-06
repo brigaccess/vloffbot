@@ -1,45 +1,13 @@
 import json
 import re
-import requests
-import urllib.parse
 
 from address_cache import cached_address
 from database import uses_db
 from models import Subscribition, BlackoutAddress, Blackout, Address
 from utils import format_blackout
+import geocoder
 
 hasnumbers = re.compile('[0-9]')
-
-
-def geocode_request(q=None, lat=None, lon=None, zoom=15, radius=12):
-    url = 'http://api.map.vl.ru/geocode?%s'
-    if lat is not None and lon is not None:
-        url = url % urllib.parse.urlencode({'lat': lat, 'lon': lon, 'zoom': zoom, 'radius': radius})
-    elif q is not None:
-        url = url % urllib.parse.urlencode({'q': q})
-
-    try:
-        response = requests.get(url).json()
-        return response
-    except:
-        return None
-
-
-def city_filter(response):
-    if response is None:
-        return None
-
-    filtered = []
-    for item in response:
-        if item['attributes']['city']['name'] == 'Владивосток':
-            filtered.append(item)
-    return filtered
-
-
-def extract_streetname(item):
-    return item['attributes']['street']['abbr'] + ' ' + \
-           item['attributes']['street']['name'] + ', ' + \
-           item['attributes']['num']
 
 
 def initialize(tg):
@@ -59,15 +27,15 @@ def address_handler(tg, msg):
     response = None
 
     if 'location' in msg:
-        response = geocode_request(lat=msg['location']['latitude'], lon=msg['location']['longitude'])
+        response = geocoder.request(lat=msg['location']['latitude'], lon=msg['location']['longitude'])
     elif 'text' in msg:
         # Geocoding from address string
         if hasnumbers.search(msg['text']):
-            response = geocode_request(q=msg['text'])
+            response = geocoder.request(q=msg['text'])
     else:
         tg.reply(chat_id, msg_id, _('watch.not_expected'), dialogue=True)
 
-    response = city_filter(response)
+    response = geocoder.city_filter(response)
 
     if response is None:
         tg.reply(chat_id, msg_id, _('watch.blocked_or_broken'), dialogue=True)
@@ -75,7 +43,7 @@ def address_handler(tg, msg):
     elif len(response) > 1:
         multiple_choice(tg, chat_id, msg_id, response)
     elif len(response) == 1:
-        add_watch(tg, chat_id, msg_id, extract_streetname(response[0]))
+        add_watch(tg, chat_id, msg_id, geocoder.extract_streetname(response[0]))
     else:
         tg.reply(chat_id, msg_id, _('watch.wrong_address'), hide_keyboard=False, dialogue=True)
 
@@ -83,7 +51,7 @@ def address_handler(tg, msg):
 def multiple_choice(tg, chat_id, msg_id, response):
     kb = []
     for item in response:
-        kb.append([extract_streetname(item), ])
+        kb.append([geocoder.extract_streetname(item), ])
 
     tg.set_handler(chat_id, destiny_handler)
     tg.reply(chat_id, msg_id, _('watch.choose_your_destiny'), dialogue=True, reply_markup={'keyboard': kb})
