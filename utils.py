@@ -37,7 +37,7 @@ def get_emoji(s):
         return '🔥'
 
 
-def format_blackout(s, addresses, blackout, nominative=False, accusative=False):
+def format_blackout(s, addresses, blackout, accusative=False):
     if not accusative:
         type_capitalized = get_genitive(blackout.type_)
     else:
