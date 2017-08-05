@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-07-06 17:51++10\n"
+"POT-Creation-Date: 2017-08-06 01:15++10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,40 +15,40 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: bot.py:48
-msgid "kirov.reporting"
+#: bot.py:71 bot_modules/stats.py:43
+msgid "main.unknown_command"
 msgstr ""
 
-#: bot_modules/help.py:6 bot_modules/start.py:25 bot_modules/start.py:49
+#: bot.py:95 bot_modules/unwatch.py:39
+msgid "main.cancelled"
+msgstr ""
+
+#: bot_modules/help.py:7 bot_modules/start.py:27 bot_modules/start.py:51
 msgid "help.line_1"
 msgstr ""
 
-#: bot_modules/list.py:18 bot_modules/status.py:16
+#: bot_modules/list.py:19 bot_modules/status.py:16
 msgid "status.nothing_is_watched"
 msgstr ""
 
-#: bot_modules/list.py:20
+#: bot_modules/list.py:22
 msgid "list.addresses_you_watch"
 msgstr ""
 
-#: bot_modules/start.py:38 bot_modules/watch.py:82
+#: bot_modules/start.py:40 bot_modules/watch.py:79
 msgid "watch.already_watching"
 msgstr ""
 
-#: bot_modules/start.py:40
+#: bot_modules/start.py:42
 msgid "start.done"
 msgstr ""
 
-#: bot_modules/start.py:42
+#: bot_modules/start.py:44
 msgid "start.done_with_blackouts"
 msgstr ""
 
 #: bot_modules/stats.py:15
 msgid "stats.details"
-msgstr ""
-
-#: bot_modules/stats.py:43 telegram.py:117
-msgid "main.unknown_command"
 msgstr ""
 
 #: bot_modules/status.py:26
@@ -59,7 +59,11 @@ msgstr ""
 msgid "status.current_blackouts"
 msgstr ""
 
-#: bot_modules/status.py:31
+#: bot_modules/status.py:32
+msgid "blackout.format_md"
+msgstr ""
+
+#: bot_modules/status.py:34
 msgid "blackout.format"
 msgstr ""
 
@@ -79,10 +83,6 @@ msgstr ""
 msgid "unwatch.nothing_to_unwatch"
 msgstr ""
 
-#: bot_modules/unwatch.py:39 telegram.py:68
-msgid "main.cancelled"
-msgstr ""
-
 #: bot_modules/unwatch.py:51
 msgid "unwatch.not_found"
 msgstr ""
@@ -91,36 +91,40 @@ msgstr ""
 msgid "unwatch.aaaargh"
 msgstr ""
 
-#: bot_modules/watch.py:22
+#: bot_modules/watch.py:19
 msgid "watch.welcome"
 msgstr ""
 
-#: bot_modules/watch.py:37
+#: bot_modules/watch.py:34
 msgid "watch.not_expected"
 msgstr ""
 
-#: bot_modules/watch.py:42 bot_modules/watch.py:75
+#: bot_modules/watch.py:39 bot_modules/watch.py:72
 msgid "watch.blocked_or_broken"
 msgstr ""
 
-#: bot_modules/watch.py:49
+#: bot_modules/watch.py:46
 msgid "watch.wrong_address"
 msgstr ""
 
-#: bot_modules/watch.py:58
+#: bot_modules/watch.py:55
 msgid "watch.choose_your_destiny"
 msgstr ""
 
-#: bot_modules/watch.py:68
+#: bot_modules/watch.py:65
 msgid "watch.wat"
 msgstr ""
 
-#: bot_modules/watch.py:84
+#: bot_modules/watch.py:81
 msgid "watch.done"
 msgstr ""
 
-#: bot_modules/watch.py:86
+#: bot_modules/watch.py:83
 msgid "watch.done_with_blackouts"
+msgstr ""
+
+#: messengers/telegram.py:128
+msgid "kirov.reporting"
 msgstr ""
 
 #: tasks.py:72
@@ -147,7 +151,7 @@ msgstr ""
 msgid "notify.details_changed_multiple"
 msgstr ""
 
-#: tasks.py:106 utils.py:91
+#: tasks.py:106 utils.py:94
 msgid "blackout.format_addressless"
 msgstr ""
 

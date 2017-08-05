@@ -8,13 +8,13 @@ from lxml import html
 from sqlalchemy import and_
 
 import config
-from bot import tg
+from bot import Bot
 from database import init_db, uses_db
 from models import Blackout, BlackoutAddress, Subscribition, Address
 from utils import format_blackout
 
-celery = Celery('vloff_tasks', backend=config.CELERY_RESULT_BACKEND,
-                broker=config.CELERY_BROKER_URL)
+bot = Bot()
+celery = Celery('vloff_tasks', backend=config.CELERY_RESULT_BACKEND, broker=config.CELERY_BROKER_URL)
 engine, db_session = init_db()
 
 # http://loose-bits.com/2010/10/distributed-task-locking-in-celery.html
@@ -42,7 +42,7 @@ def only_one(function=None, key="", timeout=None):
 
 @celery.task(rate_limit=20, name='Send notification')
 def send_notification(chat_id, text):
-    tg.send_message(chat_id, text)
+    bot.send_message(chat_id, text)
 
 
 @uses_db(session=db_session)

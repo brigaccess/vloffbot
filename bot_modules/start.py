@@ -8,12 +8,12 @@ from models import Address, Chat
 from utils import subscribe, SubscribeStatus
 
 
-def initialize(tg):
-    tg.register_command('/start', start_command)
+def initialize(bot):
+    bot.register_command('/start', start_command)
 
 
 @uses_db
-def start_command(tg, msg, session=None):
+def start_command(bot, msg, session=None):
     chat_id = msg['chat']['id']
     chat_data = session.query(Chat).filter(Chat.id == chat_id).first()
     if chat_data is not None:
@@ -22,13 +22,13 @@ def start_command(tg, msg, session=None):
 
     arguments = msg['text'].split(' ')[1:]
     if len(arguments) == 1:
-        start_with_address(tg, msg, arguments)
+        start_with_address(bot, msg, arguments)
     else:
-        tg.send_message(chat_id, _('help.line_1'))
+        bot.send_message(chat_id, _('help.line_1'))
 
 
 @uses_db
-def start_with_address(tg, msg, arguments, session=None):
+def start_with_address(bot, msg, arguments, session=None):
     chat_id = msg['chat']['id']
     try:
         b64address = base64.b64decode(arguments[0]).decode("utf-8")
@@ -37,15 +37,15 @@ def start_with_address(tg, msg, arguments, session=None):
             address = session.query(Address).get(cached_address)
             result = subscribe(chat_id, cached_address)
             if result[0] is SubscribeStatus.already_watching:
-                tg.send_message(chat_id, _('watch.already_watching'), hide_keyboard=True)
+                bot.send_message(chat_id, _('watch.already_watching'), hide_keyboard=True)
             elif result[0] is SubscribeStatus.done:
-                tg.send_message(chat_id, _('start.done').format(addresses=address.address), hide_keyboard=True)
+                bot.send_message(chat_id, _('start.done').format(addresses=address.address), hide_keyboard=True)
             elif result[0] is SubscribeStatus.done_with_blackouts:
-                tg.send_message(chat_id, _('start.done_with_blackouts').format(addresses=address.address) + result[1],
+                bot.send_message(chat_id, _('start.done_with_blackouts').format(addresses=address.address) + result[1],
                                 hide_keyboard=True)
             return
     except Error as e:
         pass
     except Exception as e:
         traceback.print_exc()
-    tg.send_message(chat_id, _('help.line_1'))
+    bot.send_message(chat_id, _('help.line_1'))

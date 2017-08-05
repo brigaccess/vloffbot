@@ -8,7 +8,7 @@ Base = declarative_base()
 
 class Chat(Base):
     __tablename__ = 'users'
-    id = Column(BigInteger, primary_key=True)
+    id = Column(String, primary_key=True)
     added_on = Column(DateTime, default=datetime.utcnow)
     active = Column(Boolean, default=True)
     admin = Column(Boolean, default=False)
@@ -18,7 +18,7 @@ class Subscribition(Base):
     __tablename__ = 'subscribitions'
 
     id = Column(Integer, primary_key=True)
-    chat = Column(BigInteger)
+    chat = Column(String)
     address_id = Column(Integer, ForeignKey('addresses.id'))
     address = relationship('Address')
     added_on = Column(DateTime, default=datetime.utcnow)

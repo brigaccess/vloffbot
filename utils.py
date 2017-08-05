@@ -53,14 +53,15 @@ def format_blackout(s, addresses, blackout, accusative=False):
             )
 
 
-def format_addresses(addresses):
+def format_addresses(addresses, markdown):
+    if markdown:
+        template = '\n[- {address}](http://www.vl.ru{url}?utm_source=vloffbot)'
+    else:
+        template = '\n- {address}'
+
     result = ''
-    if len(addresses) > 1:
-        result = ''
-        for address in addresses:
-            result += '[- %s](http://www.vl.ru%s?utm_source=vloffbot)\n' % address
-    elif len(addresses) == 1:
-        result = '[%s](http://www.vl.ru%s?utm_source=vloffbot)' % addresses[0]
+    for address in addresses:
+        result += template.format(address=address[0], url=address[1])
     return result
 
 

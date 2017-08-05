@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 from models import Chat, Subscribition
 
 
-def initialize(tg):
-    tg.register_command('/stats', stats_command)
+def initialize(bot):
+    bot.register_command('/stats', stats_command)
 
 
 @uses_db
-def stats_command(tg, msg, session=None):
+def stats_command(bot, msg, session=None):
     user_id = msg['from']['id']
     user = session.query(Chat).get(user_id)
     if user and user.admin == True:
@@ -38,6 +38,6 @@ def stats_command(tg, msg, session=None):
             ])
         text = text.format(daily=results[0], weekly=results[1], monthly=results[2], total=results[3])
 
-        tg.send_message(msg['chat']['id'], text)
+        bot.send_message(msg['chat']['id'], text)
     else:
-        tg.send_message(msg['chat']['id'], _('main.unknown_command'))
+        bot.send_message(msg['chat']['id'], _('main.unknown_command'))
