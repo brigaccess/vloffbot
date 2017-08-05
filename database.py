@@ -1,3 +1,5 @@
+from functools import wraps
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
@@ -16,6 +18,7 @@ Base.metadata.create_all(engine)
 
 def uses_db(*args, session=Session):
     def uses_db_decorator(func):
+        @wraps(func)
         def func_wrapper(*args, **kwargs):
             s = session()
             result = None
